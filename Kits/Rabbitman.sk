@@ -1,0 +1,40 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Rabbitman":
+        add "Rabbitman" to {kitlist::*}
+    set {kits.Rabbitman.rank} to "Bizarre"
+    set {kits.Rabbitman.description} to "ジャンプ力が高く、攻撃時回復アイテムを発見する。"
+    set {kits.Rabbitman.mhp} to 20
+    set {kits.Rabbitman.head} to {heads::rabbitman}
+    set {kits.Rabbitman.chest} to leather chestplate named "<red>捕食者" with lore "被ダメージ時：背後からの攻撃を無効化"
+    dye {kits.Rabbitman.chest} white
+    set {kits.Rabbitman.legs} to leather leggings
+    dye {kits.Rabbitman.legs} white
+    set {kits.Rabbitman.feet} to leather boots
+    dye {kits.Rabbitman.feet} pink
+    
+
+    delete {kits.Rabbitman.items::*}
+    add iron sword to {kits.Rabbitman.items::*}
+    add feather to {kits.Rabbitman.items::*}
+    add carrot on a stick named "<orange>ニンジン探知機" with lore "常時(50%%)：攻撃時回復ニンジンを得る" to {kits.Rabbitman.items::*}
+
+    delete {kits.Rabbitman.eval::*}
+    add "apply Jump 3 to player for 80000 seconds" to {kits.Rabbitman.eval::*}
+
+on damage:
+    attacker has carrot on a stick
+    loop items in inventory of attacker:
+        loop-item is carrot on a stick
+        name of loop-item contains "ニンジン探知機"
+        set {_has} to true
+        exit loop
+    {_has} exists
+    chance of 50%:
+        give 1 carrot named "<green>回復<orange>ニンジン" with lore "右クリック時：HP満腹度を0.5回復" to attacker
+
+on rightclick with carrot:
+    name of player's tool contains "回復<orange>ニンジン"
+    heal player by 0.5
+    add 0.5 to player's food level
+    remove 1 of tool from tool

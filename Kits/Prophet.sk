@@ -1,0 +1,39 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Prophet":
+        add "Prophet" to {kitlist::*}
+    set {kits.Prophet.rank} to "Element"
+    set {kits.Prophet.description} to "敵の攻撃を予言し回避する"
+    set {kits.Prophet.mhp} to 20
+    set {kits.Prophet.chest} to leather chestplate
+    dye {kits.Prophet.chest} purple
+    set {kits.Prophet.legs} to leather leggings
+    dye {kits.Prophet.legs} purple
+    set {kits.Prophet.feet} to leather boots
+    dye {kits.Prophet.feet} black
+    
+    delete {kits.Prophet.items::*}
+    add wood sword of Smite 3 to {kits.Prophet.items::*}
+    add {items::AttackWand} to {kits.Prophet.items::*}
+    add eye of ender named "<purple>予言の瞳" with lore "右クリック時：満腹度7消費：最大3回分の攻撃を無効化する" to {kits.Prophet.items::*}
+
+    delete {kits.Prophet.eval::*}
+    add "apply Night Vision 1 to player for 80000 seconds" to {kits.Prophet.eval::*}
+
+on rightclick with eye of ender:
+    if name of player's tool contains "予言の瞳":
+        player's food level >= 7
+        remove 7 from player's food level
+        set {%player%.PredictionEye} to 3
+        message "<lime>来たるべきダメージを予言した"
+
+on damage:
+    {%victim%.PredictionEye} is set
+    cancel event
+    remove 1 from {%victim%.PredictionEye}
+    if {%victim%.PredictionEye} <= 0:
+        message "<red>これ以上回避できません" to victim
+        delete {%victim%.PredictionEye}
+        stop
+    message "<lime>残り%{predict.%victim%}%回回避できます" to victim
+    message "<yellow>攻撃が予言されていた！" to attacker

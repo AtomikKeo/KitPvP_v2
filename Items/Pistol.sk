@@ -1,0 +1,28 @@
+on script load:
+    set {items::Pistol} to wood hoe named "<light gray>ピストル" with lore "右クリック時：矢を発射" and "左クリック時：リロード"
+
+on rightclick with wood hoe:
+    name of player's tool contains "ピストル"
+    cancel event
+    if {%player%.Pistol} is not set:
+        set {%player%.Pistol} to 10
+    if {%player%.Pistol} is 0:
+        send action bar "<red>!!!弾切れ!!!" to player
+    else:
+        remove 1 from {%player%.Pistol}
+        shoot an arrow from player at speed 2
+        set {_s} to "<lime>"
+        loop {%player%.Pistol} times:
+            set {_s} to "%{_s}%|"
+        send action bar {_s} to player
+
+on leftclick with wood hoe:
+    name of player's tool contains "ピストル"
+    {%player%.Pistol} is not 10
+    set {_s} to "<lime>"
+    loop 10 times:
+        set {_s} to "%{_s}%|"
+        send action bar {_s} to player
+        wait 2 ticks
+    set {%player%.Pistol} to 10
+

@@ -23,3 +23,5 @@ on script load:
     add "apply Night Vision 1 to player for 80000 seconds" to {kits.Bowman.eval::*}
     add "apply Jump 1 to player for 80000 seconds" to {kits.Bowman.eval::*}
 
+    delete {kits.Bowman.wish.items::*}
+    set {kits.Bowman.wish.items::1} to 16 arrow

@@ -18,6 +18,9 @@ on script load:
     add 32 arrow to {kits.Cavalry.items::*}
     add {items::Goods} to {kits.Cavalry.items::*}
 
+    delete {kits.Cavalry.wish.items::*}
+    set {kits.Cavalry.wish.items::1} to {kits.Cavarly.items::4}
+
 on rightclick with red standing banner:
     {%player%.Rush.vehicle} is not set
     {%player%.Rush.cooltime} is not set

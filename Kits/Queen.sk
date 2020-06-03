@@ -1,0 +1,35 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Queen":
+        add "Queen" to {kitlist::*}
+    set {kits.Queen.rank} to "Bizarre"
+    set {kits.Queen.description} to "相手より高い場所にいる場合ダメージを無効化する"
+    set {kits.Queen.mhp} to 12
+    set {kits.Queen.head} to gold helmet
+    set {kits.Queen.chest} to leather chestplate
+    dye {kits.Queen.chest} green
+    set {kits.Queen.legs} to leather leggings
+    dye {kits.Queen.legs} green
+    set {kits.Queen.feet} to leather boots
+    dye {kits.Queen.feet} red
+
+
+    delete {kits.Queen.items::*}
+    add bow to {kits.Queen.items::*}
+    add wood sword of Smite 4 to {kits.Queen.items::*}
+    add gold ingot named "<orange>謁見" with lore "被ダメージ時：相手の高さが自分の高さより下なら無効化" to {kits.Queen.items::*}
+    add 16 arrow to {kits.Queen.items::*}
+
+    delete {kits.Queen.eval::*}
+    add "apply Jump 2 to player for 80000 seconds" to {kits.Queen.evals::*}
+
+on damage:
+    victim has gold ingot
+    loop items in inventory of victim:
+        loop-item is gold ingot
+        name of loop-item contains "謁見"
+        set {_has} to true
+        exit loop
+    {_has} exists
+    cancel event
+    message "<yellow>相手より低い高さにいるためダメージが無効化された" to attacker

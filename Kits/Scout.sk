@@ -1,0 +1,24 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Scout":
+        add "Scout" to {kitlist::*}
+    set {kits.Scout.rank} to "Bizarre"
+    set {kits.Scout.description} to "高い機動力と、手軽な遠距離攻撃で戦う"
+    set {kits.Scout.mhp} to 16
+    set {kits.Scout.chest} to leather chestplate
+    dye {kits.Scout.chest} (255, 82, 5)
+    set {kits.Scout.legs} to leather leggings
+    dye {kits.Scout.legs} (111, 95, 88)
+    set {kits.Scout.feet} to leather boots
+    dye {kits.Scout.feet} white
+    
+
+    delete {kits.Scout.items::*}
+    add {items::Pistol} to {kits.Scout.items::*}
+    add stick of Knockback 3 to {kits.Scout.items::*}
+    add 4 of {items::CanBeef} to {kits.Scout.items::*}
+    add {items::DoubleJump} to {kits.Scout.items::*}
+
+    delete {kits.Scout.eval::*}
+    add "apply Jump 2 to player for 80000 seconds" to {kits.Scout.eval::*}
+    add "apply Speed 3 to player for 80000 seconds" to {kits.Scout.evals::*}

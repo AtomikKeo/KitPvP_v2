@@ -1,0 +1,33 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Predator":
+        add "Predator" to {kitlist::*}
+    set {kits.Predator.rank} to "Element"
+    set {kits.Predator.description} to "すばやく移動しながら、敵を動けなくして戦う"
+    set {kits.Predator.mhp} to 20
+    set {kits.Predator.head} to {heads::predator}
+    set {kits.Predator.chest} to leather chestplate named "<red>捕食者" with lore "被ダメージ時：背後からの攻撃を無効化"
+    dye {kits.Predator.chest} gray
+    set {kits.Predator.legs} to leather leggings
+    dye {kits.Predator.legs} gray
+    set {kits.Predator.feet} to leather boots
+    dye {kits.Predator.feet} gray
+    
+
+    delete {kits.Predator.items::*}
+    add stone sword to {kits.Predator.items::*}
+    add {items::WebBow} to {kits.Predator.items::*}
+    add {items::ShadowBoots} to {kits.Predator.items::*}
+    add {items::DoubleJump} to {kits.Predator.items::*}
+    add 16 arrow to {kits.Predator.items::*}
+    add 4 cobweb to {kits.Predator.items::*}
+
+    delete {kits.Predator.eval::*}
+    add "apply Slow 3 to player for 80000 seconds" to {kits.Predator.eval::*}
+    add "apply Night Vision 1 to player for 80000 seconds" to {kits.Predator.eval::*}
+    add "apply Jump 2 to player for 80000 seconds" to {kits.Predator.eval::*}
+
+on damage:
+    name of victim's chestplate contains "捕食者"
+    attacker's facing is victim's facing
+    cancel event

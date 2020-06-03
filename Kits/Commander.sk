@@ -23,6 +23,9 @@ on script load:
     delete {kits.Commander.eval::*}
     add "apply Speed 1 to player for 80000 seconds" to {kits.Commander.eval::*}
 
+    delete {kits.Commander.wish.items::*}
+    set {kits.Commander.items::1} to 2 of {items::LesserZombieEgg}
+
 on death of player:
     {%attacker%.kit} is "Commander"
     give attacker 2 harming splash potion

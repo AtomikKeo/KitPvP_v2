@@ -21,7 +21,7 @@ on script load:
     add "apply Slow 1 to player for 80000 seconds" to {kits.Paladin.eval::*}
 
 on damage:
-    victim is not ad player
+    victim is not a player
     {mobs::%UUID of victim%.owner} exists
     name of {mobs::%UUID of victim%.owner}'s offhand tool contains "かばいの盾"
     {mobs::%UUID of victim%.owner} is blocking

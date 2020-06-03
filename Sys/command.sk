@@ -132,6 +132,8 @@ command /kit <text> <integer=0>:
 			set player's offhand tool to {kits.%{_prekit}%.wish.offhand}
 		else:
 			give player {kits.%{_prekit}%.wish.offhand}
+		loop {kits.%{_kit}%.wish.items::*}:
+			give player loop-value
 
 		set {_rank} to {kits.%{_kit}%.rank}
 		set {_prerank} to {kits.%{_prekit}%.rank}

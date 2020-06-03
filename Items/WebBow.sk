@@ -1,0 +1,50 @@
+on script load:
+    set {items::WebBow} to bow named "捕獲弓" with lore "攻撃時：しゃがみながら発射で相手を蜘蛛の糸に絡ませる"
+
+on shoot:
+    name of shooter's tool contains "捕獲弓"
+    shooter is sneaking
+    shooter has cobweb
+    remove 1 cobweb from shooter
+    set {projectiles::%UUID of projectile%} to "WebBow"
+
+on damage:
+    {projectiles::%UUID of projectile%} is "WebBow"
+    set {_webloc} to location of victim
+    if block at {_webloc} is air:
+        set block at {_webloc} to cobweb
+    if block at block 1 northwest {_webloc} is air:
+        set block at block 1 northwest of {_webloc} to cobweb
+    if block at block 1 northeast of {_webloc} is air:
+        set block at block 1 northeast of {_webloc} to cobweb
+    if block at block 1 southwest of {_webloc} is air:
+        set block at block 1 southwest of {_webloc} to cobweb
+    if block at block 1 southeast of {_webloc} is air:
+        set block at block 1 southeast of {_webloc} to cobweb
+    if block at block 1 north of {_webloc} is air:
+        set block at block 1 north of {_webloc} to cobweb
+    if block at block 1 east of {_webloc} is air:
+        set block at block 1 east of {_webloc} to cobweb
+    if block at block 1 south of {_webloc} is air:
+        set block at block 1 south of {_webloc} to cobweb
+    if block at block 1 west of {_webloc} is air:
+        set block at block 1 west of {_webloc} to cobweb
+    wait 4 second
+    if block at {_webloc} is cobweb:
+        set block at {_webloc} to air
+    if block at block 1 northwest of {_webloc} is cobweb:
+        set block at block 1 northwest of {_webloc} to air
+    if block at block 1 northeast of {_webloc} is cobweb:
+        set block at block 1 northeast of {_webloc} to air
+    if block at block 1 southwest of {_webloc} is cobweb:
+        set block at block 1 southwest of {_webloc} to air
+    if block at block 1 southeast of {_webloc} is cobweb:
+        set block at block 1 southeast of {_webloc} to air
+    if block at block 1 north of {_webloc} is cobweb:
+        set block at block 1 north of {_webloc} to air
+    if block at block 1 east of {_webloc} is cobweb:
+        set block at block 1 east of {_webloc} to air
+    if block at block 1 south of {_webloc} is cobweb:
+        set block at block 1 south of {_webloc} to air
+    if block at block 1 west of {_webloc} is cobweb:
+        set block at block 1 west of {_webloc} to air

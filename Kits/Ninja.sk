@@ -13,7 +13,7 @@ on script load:
     dye {kits.Ninja.feet} white
 
     delete {kits.Ninja.items::*}
-    add iron sword of sharpness 1
+    add iron sword of sharpness 1 to {kits.Ninja.items::*}
     add 16 nether star named "<gray>手裏剣" with lore "右クリック時：ウィザーを付与する手裏剣を発射" to {kits.Ninja.items::*}
     add string named "<light gary>壁のぼり" with lore "スニーク時：前に壁がある場合のぼる" to {kits.Ninja.items::*}
     add leather named "<magenta>変わり身" with lore "被ダメージ時：致命傷の場合消えて逃げる" to {kits.Ninja.items::*}
@@ -39,7 +39,7 @@ on damage:
     projectile is a arrow
     {projectiles::%UUID of projectile%} is "Shuriken"
     make attacker damage victim by 4
-    applt Wither 1 to victim for 3 seconds
+    apply Wither 1 to victim for 3 seconds
 
 on sneak toggle:
     player has string
@@ -59,7 +59,7 @@ on sneak toggle:
 
 on damage:
     victim has leather
-    health of player < damage
+    health of victim < damage
     {%victim%.Scapegoat.armor::*} exists
     loop items in inventory of victim:
         loop-item is leather
@@ -70,18 +70,18 @@ on damage:
     cancel event
     message "<magenta>変わり身が発動した！" to victim
     remove 1 leather from victim
-    spawn sheep from victim
+    spawn sheep at victim
     set {%victim%.Scapegoat.armor::1} to victim's helmet
     set {%victim%.Scapegoat.armor::2} to victim's chestplate
     set {%victim%.Scapegoat.armor::3} to victim's leggings
     set {%victim%.Scapegoat.armor::4} to victim's boots
     set victim's helmet to air
-    set victim's chest to air
+    set victim's chestplate to air
     set victim's leggings to air
     set victim's boots to air
     wait 5 seconds
     set victim's helmet to {%victim%.Scapegoat.armor::1}
-    set victim's chest to {%victim%.Scapegoat.armor::2}
+    set victim's chestplate to {%victim%.Scapegoat.armor::2}
     set victim's leggings to {%victim%.Scapegoat.armor::3}
     set victim's boots to {%victim%.Scapegoat.armor::4}
     delete {%victim%.Scapegoat.armor::*}

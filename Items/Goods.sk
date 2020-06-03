@@ -1,6 +1,6 @@
 on script load:
     set {items::Goods} to chest named "<lime>救援物資" with lore "キル時：武器の修復、補給、回復アイテムの提供がされる"
-    set {items::CanBeed} to steak named "<orange>コンビーフ" with lore "右クリック時：自分をハート2回復"
+    set {items::CanBeef} to steak named "<orange>コンビーフ" with lore "右クリック時：自分をハート2回復"
 
 on death of player:
     loop items in attacker's inventory:

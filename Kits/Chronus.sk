@@ -18,6 +18,9 @@ on script load:
     add {items::Goods} to {kits.Chronus.items::*}
     add clock named "<yellow>時の時計" with lore "右クリック時：敵の動きを遅くする" to {kits.Chronus.items::*}
 
+    delete {kits.Chronus.wish.items::*}
+    set {kits.Chronus.wish.items::1} to 1 speed potion
+
 on rightclick with clock:
     name of player's tool contains "時の時計"
     remove 1 clock from player

@@ -97,3 +97,6 @@ on place:
 on rightclick:
     name of player's tool exists
     cancel event
+
+on projectile hit:
+    delete projectile
