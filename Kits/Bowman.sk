@@ -5,6 +5,8 @@ on script load:
     set {kits.Bowman.rank} to "Element"
     set {kits.Bowman.description} to "近接戦闘でもノックバックを利用して遠距離で戦うことができる"
     set {kits.Bowman.mhp} to 16
+    set {kits.Bowman.icon} to bow
+
     set {kits.Bowman.head} to leather helmet
     set {kits.Bowman.chest} to leather chestplate
     set {kits.Bowman.legs} to leather leggings

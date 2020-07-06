@@ -5,6 +5,8 @@ on script load:
     set {kits.Commander.rank} to "Bizarre"
     set {kits.Commander.description} to "通常モブを大量召喚し、統率することで戦う"
     set {kits.Commander.mhp} to 16
+    set {kits.Commander.icon} to red standing banner
+
     set {kits.Commander.head} to red standing banner
     set {kits.Commander.chest} to iron chestplate
     set {kits.Commander.legs} to leather leggings

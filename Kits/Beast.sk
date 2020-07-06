@@ -5,6 +5,7 @@ on script load:
     set {kits.Beast.rank} to "Occult"
     set {kits.Beast.description} to "元々の身体能力が高く、索敵と逃走が得意"
     set {kits.Beast.mhp} to 26
+    set {kits.Beast.icon} to {heads::beast}
 
     set {kits.Beast.head} to {heads::beast}
     set {kits.Beast.chest} to leather chestplate

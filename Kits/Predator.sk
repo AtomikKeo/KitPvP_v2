@@ -4,6 +4,8 @@ on script load:
         add "Predator" to {kitlist::*}
     set {kits.Predator.rank} to "Element"
     set {kits.Predator.description} to "すばやく移動しながら、敵を動けなくして戦う"
+    set {kits.Predator.icon} to {heads::predator}
+    
     set {kits.Predator.mhp} to 20
     set {kits.Predator.head} to {heads::predator}
     set {kits.Predator.chest} to leather chestplate named "<red>捕食者" with lore "被ダメージ時：背後からの攻撃を無効化"

@@ -87,6 +87,12 @@
 			"set {kits.${TM_FILENAME_BASE}.wish.offhand} to $name"
 		]
 	},
+	"setIcon":{
+		"prefix":"sicon",
+		"body":[
+			"set {kits.${TM_FILENAME_BASE}.icon} to $item"
+		]
+	},
 	"has":{
 		"prefix":"has",
 		"body":[

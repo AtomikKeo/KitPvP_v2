@@ -3,7 +3,9 @@ on script load:
     if {kitlist::*} doesn't contain "Sniper":
         add "Sniper" to {kitlist::*}
     set {kits.Sniper.rank} to "Occult"
-    set {kits.Sniper.description} to "近接戦闘でもノックバックを利用して遠距離で戦うことができる"
+    set {kits.Sniper.description} to "高火力遠距離攻撃が可能"
+    set {kits.Sniper.icon} to diamond hoe
+    
     set {kits.Sniper.mhp} to 20
     set {kits.Sniper.head} to oak leaf
     set {kits.Sniper.chest} to leather chestplate

@@ -4,6 +4,8 @@ on script load:
         add "Frankenstein" to {kitlist::*}
     set {kits.Frankenstein.rank} to "Bizarre"
     set {kits.Frankenstein.description} to "敵が倒されたとき、名もなき怪物を産み出せる"
+    set {kits.Frankenstein.icon} to rotten flesh
+    
     set {kits.Frankenstein.mhp} to 20
     set {kits.Frankenstein.chest} to leather chestplate
     dye {kits.Frankenstein.chest} white

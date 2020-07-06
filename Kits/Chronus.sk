@@ -5,6 +5,8 @@ on script load:
     set {kits.Chronus.rank} to "Element"
     set {kits.Chronus.description} to "敵の動きを止めることができる"
     set {kits.Chronus.mhp} to 20
+    set {kits.Chronus.icon} to clock
+
     set {kits.Chronus.head} to gold helmet
     set {kits.Chronus.chest} to leather chestplate
     dye {kits.Chronus.chest} light aqua

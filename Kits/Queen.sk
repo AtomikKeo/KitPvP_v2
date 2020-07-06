@@ -4,6 +4,8 @@ on script load:
         add "Queen" to {kitlist::*}
     set {kits.Queen.rank} to "Bizarre"
     set {kits.Queen.description} to "相手より高い場所にいる場合ダメージを無効化する"
+    set {kits.Queen.icon} to gold ingot
+    
     set {kits.Queen.mhp} to 12
     set {kits.Queen.head} to gold helmet
     set {kits.Queen.chest} to leather chestplate

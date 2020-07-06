@@ -4,6 +4,7 @@ on script load:
         add "Pixie" to {kitlist::*}
     set {kits.Pixie.rank} to "Element"
     set {kits.Pixie.description} to "小柄で透明、敵の向いている方向をかえて邪魔をする"
+    set {kits.Pixie.icon} to ghast tear
     set {kits.Pixie.mhp} to 6
 
     delete {kits.Pixie.items::*}

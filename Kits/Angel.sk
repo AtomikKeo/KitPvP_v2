@@ -5,6 +5,7 @@ on script load:
     set {kits.Angel.rank} to "Eclipse"
     set {kits.Angel.description} to "相手にするランクが高ければ高いほど強くなる"
     set {kits.Angel.mhp} to 16
+    set {kits.Angel.icon} to feather
 
     set {kits.Angel.head} to golden helmet named "<yellow>天使の輪"
     add "{AttributeModifiers:[{Slot:head,AttributeName:generic.maxHealth,Name:generic.maxHealth,Amount:4,Operation:0,UUIDLeast:78921,UUIDMost:178654},{Slot:head,AttributeName:generic.armor,Name:generic.armor,Amount:2,Operation:0,UUIDLeast:789521,UUIDMost:718654}]}" to nbt of {kits.Angel.head}

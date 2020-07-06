@@ -4,6 +4,8 @@ on script load:
         add "Phalanx" to {kitlist::*}
     set {kits.Phalanx.rank} to "Myth"
     set {kits.Phalanx.description} to "増援を要請し、味方が多いほどダメージを軽減して戦う"
+    set {kits.Phalanx.icon} to {kits.Phalanx.offhand}
+    
     set {kits.Phalanx.mhp} to 24
     set {kits.Phalanx.head} to leather helmet named "<orange>古代ローマのヘルム"
     dye {kits.Phalanx.head} red

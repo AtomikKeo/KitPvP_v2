@@ -4,6 +4,8 @@ on script load:
         add "Dullahan" to {kitlist::*}
     set {kits.Dullahan.rank} to "Eclipse"
     set {kits.Dullahan.description} to "死の予言をすることで、敵に大ダメージを与え続けることができる。"
+    set {kits.Dullahan.icon} to {heads::dullahan}
+    
     set {kits.Dullahan.mhp} to 15
     set {kits.Dullahan.head} to {heads::dullahan}
     set {kits.Dullahan.chest} to chainmail chestplate

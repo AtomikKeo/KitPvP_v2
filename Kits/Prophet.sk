@@ -4,6 +4,8 @@ on script load:
         add "Prophet" to {kitlist::*}
     set {kits.Prophet.rank} to "Element"
     set {kits.Prophet.description} to "敵の攻撃を予言し回避する"
+    set {kits.Prophet.icon} to eye of ender
+    
     set {kits.Prophet.mhp} to 20
     set {kits.Prophet.chest} to leather chestplate
     dye {kits.Prophet.chest} purple

@@ -4,6 +4,8 @@ on script load:
         add "Crusader" to {kitlist::*}
     set {kits.Crusader.rank} to "Myth"
     set {kits.Crusader.description} to "高い耐久力とアンデッド、高ランクに対して特効を持つ"
+    set {kits.Crusader.icon} to {heads::crusader}
+    
     set {kits.Crusader.mhp} to 10
     set {kits.Crusader.head} to {heads::crusader}
     add "{AttributeModifiers:[{Slot:head,AttributeName:generic.armor,Name:generic.armor,Amount:4,Operation:0,UUIDLeast:12222,UUIDMost:2111}]}" to nbt of {kits.Crusader.head}

@@ -1,0 +1,64 @@
+command /gui <int=1>:
+    trigger:
+        set {_page} to arg
+        set {_offset} to (arg - 1) * 45
+        
+        open chest inventory with 6 row named "<green>KitList %arg%ページ目" to player
+        
+        # アイコン表示or未開放パネル表示
+        loop 45 times:
+            set {_index} to loop-value + {_offset}
+            if {_index} > size of {kitlist::*}:
+                set {_end} to true
+                exit loop
+            set {_kit} to {kitlist::%{_index}%}
+            set {_item} to air
+            set {_desc} to {kits.%{_kit}%.description}
+            set {_rank} to {kits.%{_kit}%.rank}
+            if {%player%.kitlist::*} contains {_kit}:
+                set {_item} to {kits.%{_kit}%.icon}
+            else:
+                set {_item} to {Rank.%{_rank}%.item}
+            set slot loop-value - 1 of player's current inventory to {_item} named "<%{Rank.%{_rank}%.color}%>%{_kit}%" with lore "%{_desc}%"
+        
+        # ページ遷移ボタン
+        if {_page} > 1:
+            set slot 45 of player's current inventory to nether star named "%{_page}-1%ページ目"
+        if {_end} doesn't exist:
+            set slot 53 of player's current inventory to nether star named "%{_page}+1%ページ目"
+        
+        # 所有ポイント表示
+        displayPoint(player)
+
+on inventory click:
+    inventory name of clicked inventory contains "KitList"
+    set {_page::*} to uncolored inventory name of clicked inventory parsed as "KitList %int%ページ目"
+    cancel event
+    set {_kit} to uncolored name of event-item
+
+    # キット選択or購入
+    if {%player%.kitlist::*} contains {_kit}:
+        execute player command "/kit %{_kit}%"
+    else:
+        execute player command "/buykit %{_kit}%"
+        execute player command "/gui %{_page::1}%"
+        displayPoint(player)
+    
+    # ページ遷移挙動
+    if event-item is nether star:
+        set {_var::*} to name of event-item parsed as "%int%ページ目"
+        execute player command "gui %{_var::1}%"
+
+# 所有ポイントの各桁計算しスタック表示
+function displayPoint(p: player):
+    set {_point} to {%{_p}%.point}
+    set {_one} to mod({_point}, 10)
+    set {_ten} to floor(mod({_point}, 100)/10)
+    set {_hundred} to floor(mod({_point}, 1000)/100)
+    set {_thousand} to floor(mod({_point}, 10000)/1000)
+    set {_tenthousand} to floor(mod({_point}, 100000)/10000)
+    set slot 47 of {_p}'s current inventory to {_tenthousand} of diamond
+    set slot 48 of {_p}'s current inventory to {_thousand} of emerald
+    set slot 49 of {_p}'s current inventory to {_hundred} of gold ingot
+    set slot 50 of {_p}'s current inventory to {_ten} of iron ingot
+    set slot 51 of {_p}'s current inventory to {_one} of iron nugget

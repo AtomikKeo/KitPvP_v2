@@ -5,6 +5,7 @@ on script load:
     set {kits.Alien.rank} to "Bizarre"
     set {kits.Alien.description} to "高い機動力と様々な耐性を持つ。酸による攻撃が主体。"
     set {kits.Alien.mhp} to 24
+    set {kits.Alien.icon} to {heads::alien}
     set {kits.Alien.head} to {heads::alien}
     enchant {kits.Alien.head} with Protection 1
     set {kits.Alien.chest} to leather chestplate

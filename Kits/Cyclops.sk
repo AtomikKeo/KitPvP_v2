@@ -4,6 +4,8 @@ on script load:
         add "Cyclops" to {kitlist::*}
     set {kits.Cyclops.rank} to "Bizarre"
     set {kits.Cyclops.description} to "高い体力と攻撃力を誇るスローアタッカー"
+    set {kits.Cyclops.icon} to {heads::cyclops}
+    
     set {kits.Cyclops.mhp} to 28
     set {kits.Cyclops.head} to {heads::cyclops}
     set {kits.Cyclops.legs} to leather leggings

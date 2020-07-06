@@ -1,17 +1,23 @@
 
 # ランク色とランク開放コストの設定
 on script load:
-    set {Rank.Element.price} to 100
-    set {Rank.Bizarre.price} to 300
-    set {Rank.Occult.price} to 500
-    set {Rank.Myth.price} to 700
-    set {Rank.Eclipse.price} to 1000
+    set {Rank.Element.price} to 500
+    set {Rank.Bizarre.price} to 750
+    set {Rank.Occult.price} to 1000
+    set {Rank.Myth.price} to 1500
+    set {Rank.Eclipse.price} to 2000
     
     set {Rank.Element.color} to "lime"
     set {Rank.Bizarre.color} to "cyan"
     set {Rank.Occult.color} to "yellow"
     set {Rank.Myth.color} to "purple"
     set {Rank.Eclipse.color} to "red"
+
+    set {Rank.Element.item} to lime stained glass pane
+    set {Rank.Bizarre.item} to cyan stained glass pane
+    set {Rank.Occult.item} to yellow stained glass pane
+    set {Rank.Myth.item} to purple stained glass pane
+    set {Rank.Eclipse.item} to red stained glass pane
 
 # 新規の初期化
 on first join:

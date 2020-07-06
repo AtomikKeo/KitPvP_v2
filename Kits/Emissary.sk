@@ -4,6 +4,8 @@ on script load:
         add "Emissary" to {kitlist::*}
     set {kits.Emissary.rank} to "Occult"
     set {kits.Emissary.description} to "ウィザー付与による攻撃で回復することができる"
+    set {kits.Emissary.icon} to wither skeleton skull
+    
     set {kits.Emissary.mhp} to 14
     set {kits.Emissary.head} to wither skeleton skull
     set {kits.Emissary.chest} to leather chestplate

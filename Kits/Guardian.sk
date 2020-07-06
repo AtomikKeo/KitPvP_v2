@@ -4,6 +4,8 @@ on script load:
         add "Guardian" to {kitlist::*}
     set {kits.Guardian.rank} to "Occult"
     set {kits.Guardian.description} to "高耐久力"
+    set {kits.Guardian.icon} to diamond chestplate
+
     set {kits.Guardian.mhp} to 20
     set {kits.Guardian.head} to diamond block
     set {kits.Guardian.chest} to diamond chestplate

@@ -5,6 +5,8 @@ on script load:
     set {kits.Blacksmith.rank} to "Bizarre"
     set {kits.Blacksmith.description} to "相手の防具を破壊することができる"
     set {kits.Blacksmith.mhp} to 20
+    set {kits.Blacksmith.icon} to flint
+
     set {kits.Blacksmith.chest} to leather chestplate
     set {kits.Blacksmith.legs} to leather leggings
     set {kits.Blacksmith.feet} to iron boots

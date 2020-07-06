@@ -4,6 +4,8 @@ on script load:
         add "FallenAngel" to {kitlist::*}
     set {kits.FallenAngel.rank} to "Occult"
     set {kits.FallenAngel.description} to "敵のランクが低いほど強くなる"
+    set {kits.FallenAngel.icon} to gray glazed terracotta
+    
     set {kits.FallenAngel.mhp} to 20
     set {kits.FallenAngel.head} to gray glazed terracotta named "<gray>堕天使の目" with lore "常時：Myth,Eclipseランクを強調表示"
     set {kits.FallenAngel.chest} to leather chestplate

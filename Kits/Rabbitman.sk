@@ -4,6 +4,8 @@ on script load:
         add "Rabbitman" to {kitlist::*}
     set {kits.Rabbitman.rank} to "Bizarre"
     set {kits.Rabbitman.description} to "ジャンプ力が高く、攻撃時回復アイテムを発見する。"
+    set {kits.Rabbitman.icon} to carrot
+    
     set {kits.Rabbitman.mhp} to 20
     set {kits.Rabbitman.head} to {heads::rabbitman}
     set {kits.Rabbitman.chest} to leather chestplate named "<red>捕食者" with lore "被ダメージ時：背後からの攻撃を無効化"

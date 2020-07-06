@@ -4,6 +4,8 @@ on script load:
         add "Paladin" to {kitlist::*}
     set {kits.Paladin.rank} to "Occult"
     set {kits.Paladin.description} to "増援を要請し、増援を保護しながらパーティーで戦う"
+    set {kits.Paladin.icon} to {kits.Paladin.offhand}
+    
     set {kits.Paladin.mhp} to 25
     set {kits.Paladin.head} to white wool
     set {kits.Paladin.chest} to iron chestplate

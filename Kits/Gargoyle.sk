@@ -4,6 +4,8 @@ on script load:
         add "Gargoyle" to {kitlist::*}
     set {kits.Gargoyle.rank} to "Bizarre"
     set {kits.Gargoyle.description} to "特殊攻撃に強く耐久性もそこそこ。機動力を生かしたストンプ攻撃が可能"
+    set {kits.Gargoyle.icon} to {heads::gargoyle}
+    
     set {kits.Gargoyle.mhp} to 20
     set {kits.Gargoyle.head} to {heads::gargoyle}
     set {kits.Gargoyle.chest} to leather chestplate of Protection 5

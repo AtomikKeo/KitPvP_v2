@@ -1,0 +1,2 @@
+on fade of ice:
+    cancel event

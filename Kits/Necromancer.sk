@@ -4,6 +4,9 @@ on script load:
         add "Necromancer" to {kitlist::*}
     set {kits.Necromancer.rank} to "Occult"
     set {kits.Necromancer.description} to "高い再生能力を持ち、倒した敵をゾンビとして蘇らせる事ができる"
+    set {kits.Necromancer.icon} to leather chestplate
+    dye {kits.Necromancer.icon} black
+    
     set {kits.Necromancer.mhp} to 20
     set {kits.Necromancer.head} to wither skeleton skull
     set {kits.Necromancer.chest} to leather chestplate

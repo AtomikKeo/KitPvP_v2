@@ -4,6 +4,8 @@ on script load:
         add "Lich" to {kitlist::*}
     set {kits.Lich.rank} to "Occult"
     set {kits.Lich.description} to "高い再生能力を持ち、倒した敵をゾンビとして蘇らせる事ができる"
+    set {kits.Lich.icon} to {heads::lich}
+    
     set {kits.Lich.mhp} to 12
     set {kits.Lich.head} to {heads::lich}
     set {kits.Lich.chest} to leather chestplate

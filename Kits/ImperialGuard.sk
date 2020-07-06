@@ -4,6 +4,8 @@ on script load:
         add "ImperialGuard" to {kitlist::*}
     set {kits.ImperialGuard.rank} to "Element"
     set {kits.ImperialGuard.description} to "敵との距離が近いほどダメージが上昇する"
+    set {kits.ImperialGuard.icon} to iron chestplate
+    
     set {kits.ImperialGuard.mhp} to 20
     set {kits.ImperialGuard.head} to iron helmet
     set {kits.ImperialGuard.chest} to iron chestplate of Projectile Protection 4

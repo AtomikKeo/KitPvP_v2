@@ -4,6 +4,8 @@ on script load:
         add "Mercenary" to {kitlist::*}
     set {kits.Mercenary.rank} to "Element"
     set {kits.Mercenary.description} to "前金を持っている間攻撃力が増す"
+    set {kits.Mercenary.icon} to chainmail chestplate
+    
     set {kits.Mercenary.mhp} to 22
     set {kits.Mercenary.head} to leather helmet
     set {kits.Mercenary.chest} to chainmail chestplate

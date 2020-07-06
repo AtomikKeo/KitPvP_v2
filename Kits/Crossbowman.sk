@@ -4,6 +4,8 @@ on script load:
         add "Crossbowman" to {kitlist::*}
     set {kits.Crossbowman.rank} to "Element"
     set {kits.Crossbowman.description} to "高性能なクロスボウを扱うことができる"
+    set {kits.Crossbowman.icon} to crossbow
+    
     set {kits.Crossbowman.mhp} to 16
     set {kits.Crossbowman.head} to leather helmet
     dye {kits.Crossbowman.head} green

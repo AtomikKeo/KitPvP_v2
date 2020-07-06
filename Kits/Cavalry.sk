@@ -5,6 +5,8 @@ on script load:
     set {kits.Cavalry.rank} to "Element"
     set {kits.Cavalry.description} to "馬に乗り戦う。高い機動力と突貫スキルをもつ。"
     set {kits.Cavalry.mhp} to 20
+    set {kits.Cavalry.icon} to gold horse armor
+
     set {kits.Cavalry.head} to red standing banner
     set {kits.Cavalry.chest} to chainmail chestplate
     set {kits.Cavalry.legs} to leather leggings

@@ -121,6 +121,7 @@ on place:
 #    cancel event
 
 on projectile hit:
+    projectile is arrow
     delete projectile
 
 function calcPoint(r: int, k: int, d: number) :: int:

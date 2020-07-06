@@ -5,6 +5,8 @@ on script load:
     set {kits.Anomalocaris.rank} to "Occult"
     set {kits.Anomalocaris.description} to "高耐久かつ厄介な紙魚を大量に生み出す。"
     set {kits.Anomalocaris.mhp} to 10
+    set {kits.Anomalocaris.icon} to {heads::anomalocaris}
+
     set {kits.Anomalocaris.head} to {heads::anomalocaris}
     add "{AttributeModifiers:[{Slot:head,AttributeName:generic.armor,Name:generic.armor,Amount:10,Operation:0,UUIDLeast:1,UUIDMost:2}]}" to nbt of {kits.Anomalocaris.head}
     set {kits.Anomalocaris.chest} to leather chestplate

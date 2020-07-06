@@ -3,7 +3,9 @@ on script load:
     if {kitlist::*} doesn't contain "Slime":
         add "Slime" to {kitlist::*}
     set {kits.Slime.rank} to "Myth"
-    set {kits.Slime.description} to "近接戦闘でもノックバックを利用して遠距離で戦うことができる"
+    set {kits.Slime.description} to "ダメージを受けるとスライムを生み出し、倒されなかった分は後に回復する"
+    set {kits.Slime.icon} to slime block
+    
     set {kits.Slime.mhp} to 30
     set {kits.Slime.head} to Slime block named "<lime>スライムの頭" with lore "被ダメージ時：スライムをスポーン。5秒後にスライムが生きている場合吸収。"
     set {kits.Slime.chest} to leather chestplate

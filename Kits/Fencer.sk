@@ -4,6 +4,8 @@ on script load:
         add "Fencer" to {kitlist::*}
     set {kits.Fencer.rank} to "Bizarre"
     set {kits.Fencer.description} to "回避性能と連撃性能が高い"
+    set {kits.Fencer.icon} to chainmail boots
+    
     set {kits.Fencer.mhp} to 16
     set {kits.Fencer.chest} to leather chestplate
     set {kits.Fencer.legs} to chainmail leggings

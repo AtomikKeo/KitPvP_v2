@@ -3,7 +3,9 @@ on script load:
     if {kitlist::*} doesn't contain "Metatron":
         add "Metatron" to {kitlist::*}
     set {kits.Metatron.rank} to "Occult"
-    set {kits.Metatron.description} to "前金を持っている間攻撃力が増す"
+    set {kits.Metatron.description} to "ダメージを受けると周りを炎上させる"
+    set {kits.Metatron.icon} to light blue glazed terracotta
+    
     set {kits.Metatron.mhp} to 20
     set {kits.Metatron.head} to light blue glazed terracotta named "<red>火の柱" with lore "被ダメージ時：周りのブロックを炎上させる"
     set {kits.Metatron.chest} to iron chestplate

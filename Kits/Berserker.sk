@@ -5,6 +5,8 @@ on script load:
     set {kits.Berserker.rank} to "Myth"
     set {kits.Berserker.description} to "HPが減るほど強くなる"
     set {kits.Berserker.mhp} to 16
+    set {kits.Berserker.icon} to jack-o-lantern
+
     set {kits.Berserker.head} to jack-o-lantern
     set {kits.Berserker.chest} to leather chestplate
     add "{AttributeModifiers:[{Slot:chest,AttributeName:generic.knockbackResistance,Name:generic.knockbackResistance,Amount:1,Operation:0,UUIDLeast:123465,UUIDMost:2666}]}" to nbt of {kits.Berserker.chest}

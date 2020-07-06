@@ -2,11 +2,13 @@
 #キット毎にファイルを作って、ロード時にキットのデータを登録する。
 #{---.rank}         キットのランク  Element/Bizarre/Occult/Myth/Eclipseの順
 #{---.description}  キットの説明    1,2文
+#{---.icon}         キットのicon    GUI表示時のアイテム
 #{---.mhp}          キットの最大HP  ハートの個数
 #{---.head}         キットの装備    頭からhead,chest,legs,feet
 #{---.offhand}      キットの左手
 #{---.items::*}     アイテムリスト  add X to {---.items::*}で追加していく
 #{---.eval::*}      追加式          キット選択時に起動する式　主にステータス効果関連
+#{---.wish.XXX}     DWシステム      XXXにはhead,chest,legs,feet,items::*を記述。
 
 on script load:
     wait 1 tick
@@ -15,8 +17,9 @@ on script load:
     set {kits.Template.rank} to "ランク"
     set {kits.Template.description} to "キットの説明"
     set {kits.Template.mhp} to 20
+    set {kits.-Template.icon} to stone sword
+
     set {kits.Template.head} to {heads::kitname}
-    dye {kits.Template.head} red
     add "{AttributeModifiers:[{Slot:head,AttributeName:generic.attackDamage,Name:generic.attackDamage,Amount:1,Operation:0,UUIDLeast:789521,UUIDMost:78654},{Slot:head,AttributeName:generic.armor,Name:generic.armor,Amount:1,Operation:0,UUIDLeast:789521,UUIDMost:718654}]}" to nbt of {kits.Template.head}
     set {kits.Template.chest} to leather chestplate of Unbreaking 5
     dye {kits.Template.chest} white
@@ -36,5 +39,10 @@ on script load:
 
     delete {kits.Template.eval::*}
     add "apply Speed 1 to player for 80000 seconds" to {kits.Template.eval::*}
+
+    delete {kits.Template.wish.items::*}
+    set {kits.Template.wish.items::1} to 16 arrow
+    set {kits.Template.wish.offhand} to {kits.Template.offhand}
+
 
 #キット固有武器、能力がある場合以下に記述

@@ -4,6 +4,8 @@ on script load:
         add "Knight" to {kitlist::*}
     set {kits.Knight.rank} to "Element"
     set {kits.Knight.description} to "馬に乗り戦う。馬に乗ってる間、被ダメージが減少する"
+    set {kits.Knight.icon} to iron horse armor
+    
     set {kits.Knight.mhp} to 20
     set {kits.Knight.head} to light blue standing banner
     add "{BlockEntityTag:{Base:3,Patterns:[{Pattern:flo,Color:0},{Pattern:mr,Color:0}]}}" to nbt of {kits.Knight.head}

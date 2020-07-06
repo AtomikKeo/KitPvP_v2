@@ -4,6 +4,7 @@ on script load:
         add "Achilles" to {kitlist::*}
     set {kits.Achilles.rank} to "Myth"
     set {kits.Achilles.description} to "HPが低い代わりに、高確率な回避能力を持つ。"
+    set {kits.Achilles.icon} to leather boots
     set {kits.Achilles.mhp} to 10
     set {kits.Achilles.head} to leather helmet named "<orange>古代ローマのヘルム"
     dye {kits.Achilles.head} red

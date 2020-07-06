@@ -22,6 +22,7 @@ on rightclick with diamond hoe:
 
 on leftclick with diamond hoe:
     name of player's tool contains "スナイパーライフル"
+    {%player%.SniperRifle.reloading} is not set
     {%player%.SniperRifle} is not {@magazine}
     loop items in inventory of player:
         loop-item is gunpowder

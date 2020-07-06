@@ -4,6 +4,8 @@ on script load:
         add "Ninja" to {kitlist::*}
     set {kits.Ninja.rank} to "Myth"
     set {kits.Ninja.description} to "高い攻撃力と機動力、危機回避能力を持つ"
+    set {kits.Ninja.icon} to {heads::ninja}
+    
     set {kits.Ninja.mhp} to 14
     set {kits.Ninja.head} to {heads::ninja}
     set {kits.Ninja.chest} to leather chestplate

@@ -4,6 +4,8 @@ on script load:
         add "Ghoul" to {kitlist::*}
     set {kits.Ghoul.rank} to "Myth"
     set {kits.Ghoul.description} to "敵の満腹度を奪い、キル時回復を持つ"
+    set {kits.Ghoul.icon} to {heads::ghoul}
+    
     set {kits.Ghoul.mhp} to 24
     set {kits.Ghoul.head} to {heads::ghoul}
     set {kits.Ghoul.chest} to leather chestplate

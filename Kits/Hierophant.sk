@@ -4,6 +4,8 @@ on script load:
         add "Hierophant" to {kitlist::*}
     set {kits.Hierophant.rank} to "Myth"
     set {kits.Hierophant.description} to "自分の身代わりとなる信者を生み出す"
+    set {kits.Hierophant.icon} to vindicator spawn egg
+
     set {kits.Hierophant.mhp} to 14
     set {kits.Hierophant.head} to gold helmet
     set {kits.Hierophant.chest} to leather chestplate

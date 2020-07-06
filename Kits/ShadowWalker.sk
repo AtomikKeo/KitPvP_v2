@@ -4,6 +4,9 @@ on script load:
         add "ShadowWalker" to {kitlist::*}
     set {kits.ShadowWalker.rank} to "Bizarre"
     set {kits.ShadowWalker.description} to "暗い場所で透明化し、素早さと耐久力が上昇する。"
+    set {kits.ShadowWalker.icon} to leather boots
+    dye {kits.ShadowWalker.icon} black
+    
     set {kits.ShadowWalker.mhp} to 20
     set {kits.ShadowWalker.head} to black wool
     set {kits.ShadowWalker.chest} to leather chestplate

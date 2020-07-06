@@ -4,6 +4,8 @@ on script load:
         add "Gladiator" to {kitlist::*}
     set {kits.Gladiator.rank} to "Element"
     set {kits.Gladiator.description} to "火炎属性を持つ攻撃を得意とし、戦場を駆け回る"
+    set {kits.Gladiator.icon} to stone sword
+    
     set {kits.Gladiator.mhp} to 24
     set {kits.Gladiator.head} to leather helmet named "<orange>古代ローマのヘルム"
     dye {kits.Gladiator.head} red

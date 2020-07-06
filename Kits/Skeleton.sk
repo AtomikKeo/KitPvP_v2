@@ -4,6 +4,8 @@ on script load:
         add "Skeleton" to {kitlist::*}
     set {kits.Skeleton.rank} to "Element"
     set {kits.Skeleton.description} to "無限に矢を打てるが、日光で炎上する。"
+    set {kits.Skeleton.icon} to skeleton head
+    
     set {kits.Skeleton.mhp} to 20
     set {kits.Skeleton.head} to skeleton head of curse of binding named "<gray>スケルトンの頭" with lore "日光で炎上。毒で回復。"
     set {kits.Skeleton.chest} to leather chestplate

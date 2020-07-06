@@ -4,6 +4,8 @@ on script load:
         add "Greedman" to {kitlist::*}
     set {kits.Greedman.rank} to "Bizarre"
     set {kits.Greedman.description} to "敵をキルすると相手のアイテムを全て奪うことができる"
+    set {kits.Greedman.icon} to gold sword
+    
     set {kits.Greedman.mhp} to 28
     set {kits.Greedman.head} to gold helmet of Fortune 3
     set {kits.Greedman.chest} to gold chestplate of Luck of the sea 3

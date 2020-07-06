@@ -4,6 +4,8 @@ on script load:
         add "Golem" to {kitlist::*}
     set {kits.Golem.rank} to "Eclipse"
     set {kits.Golem.description} to "攻撃時自分にダメージが入る分、最高水準のHPとDPSを誇る"
+    set {kits.Golem.icon} to {heads::golem}
+    
     set {kits.Golem.mhp} to 40
     set {kits.Golem.head} to {heads::golem}
     set {kits.Golem.chest} to leather chestplate

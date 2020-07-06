@@ -5,6 +5,8 @@ on script load:
     set {kits.Avenger.rank} to "Element"
     set {kits.Avenger.description} to "他のプレイヤーが倒される度強くなる"
     set {kits.Avenger.mhp} to 20
+    set {kits.Avenger.icon} to blaze powder
+
     set {kits.Avenger.head} to black glazed terracotta
     set {kits.Avenger.chest} to leather chestplate
     dye {kits.Avenger.chest} red

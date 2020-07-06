@@ -4,6 +4,8 @@ on script load:
         add "King" to {kitlist::*}
     set {kits.King.rank} to "Bizarre"
     set {kits.King.description} to "強力な護衛とともに戦う"
+    set {kits.King.icon} to gold helmet
+
     set {kits.King.mhp} to 20
     set {kits.King.head} to gold helmet
     set {kits.King.chest} to leather chestplate

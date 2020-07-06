@@ -5,6 +5,8 @@ on script load:
     set {kits.Assasin.rank} to "Occult"
     set {kits.Assasin.description} to "様々な妨害手段を持つ。"
     set {kits.Assasin.mhp} to 14
+    set {kits.Assasin.icon} to golden sword
+    
     set {kits.Assasin.head} to wither skeleton skull
     set {kits.Assasin.legs} to chainmail leggings
     set {kits.Assasin.feet} to chainmail boots

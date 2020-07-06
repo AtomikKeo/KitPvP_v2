@@ -4,6 +4,8 @@ on script load:
         add "Scout" to {kitlist::*}
     set {kits.Scout.rank} to "Bizarre"
     set {kits.Scout.description} to "高い機動力と、手軽な遠距離攻撃で戦う"
+    set {kits.Scout.icon} to stick
+    
     set {kits.Scout.mhp} to 16
     set {kits.Scout.chest} to leather chestplate
     dye {kits.Scout.chest} (255, 82, 5)

@@ -4,6 +4,8 @@ on script load:
         add "Fighter" to {kitlist::*}
     set {kits.Fighter.rank} to "Element"
     set {kits.Fighter.description} to "カウンター攻撃ができる。また、瀕死時に一度だけ復活できる"
+    set {kits.Fighter.icon} to magma cream
+    
     set {kits.Fighter.mhp} to 16
     set {kits.Fighter.head} to gold helmet of Protection 3
     set {kits.Fighter.chest} to leather chestplate of Unbreaking 3

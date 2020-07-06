@@ -5,6 +5,8 @@ on script load:
     set {kits.Archer.rank} to "Element"
     set {kits.Archer.description} to "無限に矢を打て、敵の矢をキャッチすることもできる"
     set {kits.Archer.mhp} to 18
+    set {kits.Archer.icon} to bow
+
     set {kits.Archer.head} to chainmail helmet of Projectile Protection 3
     set {kits.Archer.chest} to chainmail chestplate
     set {kits.Archer.legs} to chainmail leggings

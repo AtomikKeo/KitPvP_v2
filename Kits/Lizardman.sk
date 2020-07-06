@@ -4,6 +4,8 @@ on script load:
         add "Lizardman" to {kitlist::*}
     set {kits.Lizardman.rank} to "Bizarre"
     set {kits.Lizardman.description} to "敵とのHP差によって攻撃力が増減する"
+    set {kits.Lizardman.icon} to {heads::lizardman}
+
     set {kits.Lizardman.mhp} to 24
     set {kits.Lizardman.head} to {items::lizardman}
     set {kits.Lizardman.chest} to iron chestplate
