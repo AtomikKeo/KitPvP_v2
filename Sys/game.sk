@@ -8,7 +8,13 @@ command /start <string> <integer=4>:
                 set {%loop-player%.stock} to arg-2
                 set level of loop-player to arg-2
                 set {%loop-player%.killstreak} to 0
+                set {_game.%loop-player%.kill} to {%loop-player%.kill}
+                set {_game.%loop-player%.damage} to {%loop-player%.damage}
+                set {_game.%loop-player%.death} to {%loop-player%.death}
                 execute loop-player command "/spawnpoint"
+        else:
+            message "<yellow>ゲームモード<magenta>%arg-1%<yellow>は存在しません。"
+            stop
         send title "<orange>%arg-2%ストック戦" with subtitle "%{game.players::*}%" to all players for 3 seconds
         wait 3 seconds
         send title "<lime>3" to all players
@@ -20,7 +26,13 @@ command /start <string> <integer=4>:
         send title "<orange>GO!" to all players
         while size of {game.players::*} > 1:
             wait 1 seconds
-        add "<orange>1位 %{game.players::*}%" to {game.results::*}
+        set {_winner} to first element of {game.players::*}
+        set {_kill} to  {%{_winner}%.kill} - {_game.%{_winner}%.kill}
+        set {_death} to  {%{_winner}%.death} - {_game.%{_winner}%.death}
+        set {_damage} to  {%{_winner}%.damage} - {_game.%{_winner}%.damage}
+        set {_point} to calcPoint(1,{_kill},{_damage})
+        changePoint({_winner}, {_point})
+        add "<orange>1位 %{_winner}%  K/D:%{_kill}%/%{_death}% Damage:%{_damage}%" to {game.results::*}
         loop {game.results::*}:
             broadcast "%loop-value%"
         delete {game.type}
@@ -29,7 +41,7 @@ command /start <string> <integer=4>:
 
 on respawn:
 	wait 1 tick
-	{gametype} is "Stock"
+	{game.type} is "Stock"
 	set level of player to {stock.%player%}
     
 on death of player:
@@ -37,7 +49,12 @@ on death of player:
     remove 1 from {stock.%victim%}
     {stock.%victim%} is 0
     broadcast "<red>%victim%さんが脱落しました。"
-    add "%size of {game.players::*}%位 %victim%" to {game.results::*}
+    set {_kill} to  {%victim%.kill} - {_game.%victim%.kill}
+    set {_death} to  {%victim%.death} - {_game.%victim%.death}
+    set {_damage} to  {%victim%.damage} - {_game.%victim%.damage}
+    set {_point} to calcPoint(1,{_kill},{_damage})
+    changePoint(victim, {_point})
+    add "%size of {game.players::*}%位 %victim% K/D:%{_kill}%/%{_death}% Damage:%{_damage}%" to {game.results::*}
     wait 1 tick #stats用
     remove victim from {game.players::*}
 
@@ -83,6 +100,11 @@ on rightclick on dispenser:
             give 8 arrows to player
     loop all items in player's inventory:
         repair loop-item
+    loop {kits.%{_kit}%.items::*}:
+        loop-value is gunpowder
+        name of loop-value contains "弾薬"
+        give 2 of {items::Ammo} to player
+        exit loop
     wait 10 seconds
     set event-block to {_eb}
 
@@ -94,9 +116,22 @@ on place:
     name of player's tool exists
     cancel event
 
-on rightclick:
-    name of player's tool exists
-    cancel event
+#on rightclick:
+#    name of player's tool exists
+#    cancel event
 
 on projectile hit:
     delete projectile
+
+function calcPoint(r: int, k: int, d: number) :: int:
+    set {_p} to 0
+    if {_r} is 1:
+        add 500 to {_p}
+    else if {_r} is 2:
+        add 400 to {_p}
+    else if {_r} is 3:
+        add 200 to {_p}
+    else:
+        add 100 to {_p}
+    add {_k} * 100 + round({_d}) to {_p}
+    return {_p}

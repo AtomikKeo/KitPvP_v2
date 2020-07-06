@@ -82,7 +82,7 @@ on damage:
 	set {_hp} to health of victim
 	wait 1 tick
 	set {_damage} to max(0, {_hp} - health of victim)
-	add {_damage} to {_player}
+	add {_damage} to {%{_attacker}%.damage}
 
 # 被ダメージ監視
 on damage:
@@ -98,9 +98,12 @@ on death:
     victim is a player
     {game.players::*} contains victim
     add 1 to {%victim%.death}
+    set {%victim%.killstreak} to 0
     if attacker is a player:
         {game.players::*} contains attacker
         add 1 to {%attacker%.kill}
+        add 1 to {%attacker%.killstreak}
+        set {%attacker%.maxkillstreak} to max({%attacker%.maxkillstreak},{%attacker%.killstreak})
     else:
         {mobs::%UUID of attacker%} exists
         set {_attacker} to {mobs::%UUID of attacker%}

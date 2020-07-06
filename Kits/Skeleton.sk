@@ -1,0 +1,39 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Skeleton":
+        add "Skeleton" to {kitlist::*}
+    set {kits.Skeleton.rank} to "Element"
+    set {kits.Skeleton.description} to "無限に矢を打てるが、日光で炎上する。"
+    set {kits.Skeleton.mhp} to 20
+    set {kits.Skeleton.head} to skeleton head of curse of binding named "<gray>スケルトンの頭" with lore "日光で炎上。毒で回復。"
+    set {kits.Skeleton.chest} to leather chestplate
+    set {kits.Skeleton.legs} to leather leggings
+    set {kits.Skeleton.feet} to leather boots
+    
+    delete {kits.Skeleton.items::*}
+    add bow of Power 1 to {kits.Skeleton.items::*}
+    enchant {kits.Skeleton.items::1} with Infinity 1 and Flame 1
+    add 1 Arrow to {kits.Skeleton.items::*}
+    add {items::Goods} to {kits.Skeleton.items::*}
+
+    delete {kits.Skeleton.eval::*}
+    add "apply Speed 2 to player for 80000 seconds" to {kits.Skeleton.eval::*}
+    add "apply Night Vision 1 to player for 80000 seconds" to {kits.Skeleton.eval::*}
+    add "apply Jump 1 to player for 80000 seconds" to {kits.Skeleton.eval::*}
+
+    delete {kits.Skeleton.wish.items::*}
+    set {kits.Skeleton.wish.items::1} to 16 arrow
+
+on damage:
+    victim's helmet is skeleton head
+    name of victim's helmet contains "スケルトンの頭"
+    damage was caused by poison
+    cancel event
+    heal victim by damage
+
+every 1 seconds:
+    loop all players:
+        loop-player's helmet is skeleton head
+        name of loop-player's helmet contains "スケルトンの頭"
+        sunlight level at loop-player's head is 15
+        ignite loop-player for 3 seconds

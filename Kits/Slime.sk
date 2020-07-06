@@ -1,0 +1,37 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Slime":
+        add "Slime" to {kitlist::*}
+    set {kits.Slime.rank} to "Myth"
+    set {kits.Slime.description} to "近接戦闘でもノックバックを利用して遠距離で戦うことができる"
+    set {kits.Slime.mhp} to 30
+    set {kits.Slime.head} to Slime block named "<lime>スライムの頭" with lore "被ダメージ時：スライムをスポーン。5秒後にスライムが生きている場合吸収。"
+    set {kits.Slime.chest} to leather chestplate
+    dye {kits.Slime.chest} lime
+    set {kits.Slime.legs} to leather leggings
+    dye {kits.Slime.legs} lime
+    set {kits.Slime.feet} to leather boots
+    dye {kits.Slime.feet} lime
+    
+    delete {kits.Slime.items::*}
+    add wood sword to {kits.Slime.items::*}
+    add 4 of {items::LesserSlimeEgg} to {kits.Slime.items::*}
+    
+    delete {kits.Slime.eval::*}
+    
+    delete {kits.Slime.wish.items::*}
+
+on damage:
+    victim's helmet is slime block
+    name of victim's helmet contains "スライムの頭"
+    set {_num} to round(damage)
+    loop {_num} times:
+        spawn slime at victim
+        add "{Size:1}" to nbt of last spawned entity
+        set name of last spawned entity to "%victim%のスライム"
+        add last spawned entity to {_slimes::*}
+    wait 5 seconds
+    loop {_slimes::*}:
+        loop-value is alive
+        kill loop-value
+        heal victim by 1

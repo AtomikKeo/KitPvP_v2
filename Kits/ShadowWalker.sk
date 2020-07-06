@@ -1,0 +1,32 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "ShadowWalker":
+        add "ShadowWalker" to {kitlist::*}
+    set {kits.ShadowWalker.rank} to "Bizarre"
+    set {kits.ShadowWalker.description} to "暗い場所で透明化し、素早さと耐久力が上昇する。"
+    set {kits.ShadowWalker.mhp} to 20
+    set {kits.ShadowWalker.head} to black wool
+    set {kits.ShadowWalker.chest} to leather chestplate
+    dye {kits.ShadowWalker.chest} black
+    set {kits.ShadowWalker.legs} to leather leggings
+    dye {kits.ShadowWalker.legs} black
+    set {kits.ShadowWalker.feet} to leather boots named "<black>影走り" with lore "常時：暗い場所でスピード上昇&透明化"
+    dye {kits.ShadowWalker.feet} black
+
+    delete {kits.ShadowWalker.items::*}
+    add iron sword to {kits.ShadowWalker.items::*}
+    add {items::LightFoot} to {kits.ShadowWalker.items::*}
+    add 8 of splash potion named "<blue>暗視のスプラッシュポーション" to {kits.ShadowWalker.items::*}
+    add "{CustomPotionEffects:[{Id:15,Duration:120}],CustomPotionColor:868989}" to nbt of {kits.ShadowWalker.items::3}
+    delete {kits.ShadowWalker.eval::*}
+
+    delete {kits.ShadowWalker.wish.items::*}
+
+every 1 second:
+    loop all players:
+        name of loop-player's boot contains "影走り"
+        block light level at loop-player's head is less than 10
+        apply Speed 3 to loop-player for 3 second replacing existing effect
+        apply Invisibility 1 to loop-player for 3 second replacing existing effect
+        apply Resistance 1 to loop-player for 3 second replacing existing effect
+        

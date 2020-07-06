@@ -16,7 +16,7 @@ on script load:
 
     delete {kits.Gladiator.items::*}
     add stone sword of Fire Aspect 1 named "<orange>グラディエーターズソード" to {kits.Gladiator.items::*}
-    add bow of Flame 1 named "<orange>グラディエーターズボウ" with lore "攻撃時/被ダメージ時：満腹度が低いほどダメージ増加" to {kits.Gladiator.items::*}
+    add bow of Flame 1 named "<orange>グラディエーターズボウ" to {kits.Gladiator.items::*}
     add 24 arrow to {kits.Gladiator.items::*}
     add {items::LightFoot} to {kits.Gladiator.items::*}
 

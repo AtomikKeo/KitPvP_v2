@@ -18,6 +18,7 @@ on script load:
     add stick of Knockback 3 to {kits.Scout.items::*}
     add 4 of {items::CanBeef} to {kits.Scout.items::*}
     add {items::DoubleJump} to {kits.Scout.items::*}
+    add 8 of {items::Ammo} to {kits.Scout.items::*}
 
     delete {kits.Scout.eval::*}
     add "apply Jump 2 to player for 80000 seconds" to {kits.Scout.eval::*}

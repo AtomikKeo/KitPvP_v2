@@ -1,0 +1,24 @@
+on script load:
+    wait 1 tick
+    if {kitlist::*} doesn't contain "Sniper":
+        add "Sniper" to {kitlist::*}
+    set {kits.Sniper.rank} to "Occult"
+    set {kits.Sniper.description} to "近接戦闘でもノックバックを利用して遠距離で戦うことができる"
+    set {kits.Sniper.mhp} to 20
+    set {kits.Sniper.head} to oak leaf
+    set {kits.Sniper.chest} to leather chestplate
+    dye {kits.Sniper.chest} green
+    set {kits.Sniper.legs} to leather leggings
+    dye {kits.Sniper.legs} green
+    set {kits.Sniper.feet} to leather boots
+    dye {kits.Sniper.feet} green
+
+    delete {kits.Sniper.items::*}
+    add {items::SniperRifle} to {kits.Sniper.items::*}
+    add 8 of {items::Ammo} to {kits.Sniper.items::*}
+    
+    delete {kits.Sniper.eval::*}
+    add "apply Night Vision 1 to player for 80000 seconds" to {kits.Sniper.eval::*}
+
+    delete {kits.Sniper.wish.items::*}
+

@@ -1,0 +1,50 @@
+on script load:
+    set {items::SniperRifle} to diamond hoe named "<light gray>スナイパーライフル" with lore "右クリック時：矢を発射" and "左クリック時：リロード"
+
+options:
+    magazine: 4
+
+on rightclick with diamond hoe:
+    name of player's tool contains "スナイパーライフル"
+    {%player%.SniperRifle.reloading} is not set
+    cancel event
+    if {%player%.SniperRifle} is not set:
+        set {%player%.SniperRifle} to {@magazine}
+    if {%player%.SniperRifle} is 0:
+        send action bar "<red>!!!弾切れ!!!" to player
+    else:
+        remove 1 from {%player%.SniperRifle}
+        shoot an arrow from player at speed 8
+        set {_s} to "<lime>"
+        loop {%player%.SniperRifle} times:
+            set {_s} to "%{_s}%|"
+        send action bar {_s} to player
+
+on leftclick with diamond hoe:
+    name of player's tool contains "スナイパーライフル"
+    {%player%.SniperRifle} is not {@magazine}
+    loop items in inventory of player:
+        loop-item is gunpowder
+        name of loop-item contains "弾薬"
+        remove 1 gunpowder from loop-item
+        set {_has} to true
+        exit loop
+    if {_has} doesn't exist:
+        message "<yellow>弾薬がなくなった！" to player
+        stop
+    set {_s} to "<lime>"
+    set {%player%.SniperRifle.reloading} to true
+    loop 4 times:
+        set {_s} to "%{_s}%|"
+        send action bar {_s} to player
+        wait 7 ticks
+    delete {%player%.SniperRifle.reloading}
+    set {%player%.SniperRifle} to {@magazine}
+
+on sneak toggle:
+    player's tool is diamond hoe
+    name of player's tool contains "スナイパーライフル"
+    if player is not sneaking:
+        apply Slowness 64 to player for 80000 seconds
+    else:
+        remove Slowness from player

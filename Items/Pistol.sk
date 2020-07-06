@@ -1,11 +1,15 @@
 on script load:
     set {items::Pistol} to wood hoe named "<light gray>ピストル" with lore "右クリック時：矢を発射" and "左クリック時：リロード"
 
+options:
+    magazine: 10
+
 on rightclick with wood hoe:
     name of player's tool contains "ピストル"
+    {%player%.Pistol.reloading} is not set
     cancel event
     if {%player%.Pistol} is not set:
-        set {%player%.Pistol} to 10
+        set {%player%.Pistol} to {@magazine}
     if {%player%.Pistol} is 0:
         send action bar "<red>!!!弾切れ!!!" to player
     else:
@@ -18,11 +22,22 @@ on rightclick with wood hoe:
 
 on leftclick with wood hoe:
     name of player's tool contains "ピストル"
-    {%player%.Pistol} is not 10
+    {%player%.Pistol} is not {@magazine}
+    loop items in inventory of player:
+        loop-item is gunpowder
+        name of loop-item contains "弾薬"
+        remove 1 gunpowder from loop-item
+        set {_has} to true
+        exit loop
+    if {_has} doesn't exist:
+        message "<yellow>弾薬がなくなった！" to player
+        stop
     set {_s} to "<lime>"
+    set {%player%.Pistol.reloading} to true
     loop 10 times:
         set {_s} to "%{_s}%|"
         send action bar {_s} to player
         wait 2 ticks
-    set {%player%.Pistol} to 10
+    delete {%player%.Pistol.reloading}
+    set {%player%.Pistol} to {@magazine}
 

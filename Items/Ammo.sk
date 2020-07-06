@@ -1,0 +1,2 @@
+on script load:
+    set {items::Ammo} to gunpowder named "<gray>弾薬"
